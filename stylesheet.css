@@ -1,0 +1,126 @@
+body{
+font-family: arial;
+color:#535353;
+font-size: small;
+}
+
+A:link {text-decoration: bold; color:#282828; font-family:arial; font-size:small;}
+A:visited {text-decoration: bold; font-family:arial; font-size:small; color:#282828;}
+A:active {text-decoration: bold; font-family:arial; font-size:small; color:#282828;}
+A:hover {text-decoration: underline; font-family:arial; font-size:small; color: #5b69c0;}
+
+h1{
+color:#ee880d;
+}
+h2{
+color:#ee880d;
+}
+
+h3{
+color:#ee880d;
+}
+
+h4{
+color:#535353;
+}
+h5{
+color:#535353;
+}
+h6{
+color:#535353;
+}
+
+
+
+INPUT {
+font-family: arial, verdana, ms sans serif;
+font-size: small;
+} 
+
+
+DIV.header
+{
+background-image:url('header.jpg');
+background-repeat:no-repeat;
+padding-left: 172px; 
+}
+
+DIV.body
+{
+background-image:url('body.jpg');
+background-repeat:no-repeat;
+padding-left: 164px; 
+
+}
+td.blank
+{
+background-image:url('blank.jpg');
+background-repeat:no-repeat;
+width:10px;
+}
+td.tab1
+{
+background-image:url('tab1.jpg');
+background-repeat:no-repeat;
+padding-left:11px;
+padding-top:55px;
+width:78px;
+}
+td.tab2
+{
+background-image:url('tab2.jpg');
+background-repeat:no-repeat;
+padding-left:11px;
+padding-top:55px;
+width:78px;
+}
+td.tab3
+{
+background-image:url('tab2.jpg');
+background-repeat:no-repeat;
+padding-left:11px;
+padding-top:55px;
+width:78px;
+}
+td.tab4
+{
+background-image:url('tab2.jpg');
+background-repeat:no-repeat;
+padding-left:11px;
+padding-top:55px;
+width:78px;
+}
+td.login
+{
+background-image:url('login.jpg');
+background-repeat:no-repeat;
+padding-left:20px;
+padding-top:20px;
+padding-bottom:10px;
+width:300px;
+text-align:center;
+font-size:small;
+}
+table.login2
+{
+background-image:url('login2.jpg');
+background-repeat:no-repeat;
+padding-left:20px;
+padding-top:15px;
+padding-bottom:10px;
+width:400px;
+text-align:left;
+font-size:small;
+}
+td.content
+{
+background-image:url('contentbox.jpg');
+background-repeat:no-repeat;
+padding-left:15px;
+padding-right:15px;
+padding-top:15px;
+padding-bottom:15px;
+width:650px;
+height:800px;
+vertical-align: top;
+}

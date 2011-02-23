@@ -1,0 +1,17 @@
+SQL-
+homepage-
+	login built in
+
+calender(weekly)
+	be able to store events for times (start and finish)
+pages for groups
+sort group page
+user profile
+create group- (by anyone)
+edit group  
+
+-be able to search for groups -possibly have a class associated with it
+-be able to list times for office hours(when you reg for a class, user enters professor name..which has office hours associated with it) professor table..
+-group table
+-private groups
+
