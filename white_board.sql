@@ -11,6 +11,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE DATABASE IF NOT EXISTS white_board;
 GRANT ALL ON white_board.* TO 'whiteboard'@'localhost' IDENTIFIED BY 'password';
+use whiteboard;
+
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
