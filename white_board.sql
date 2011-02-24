@@ -3,15 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 23, 2011 at 07:39 PM
+-- Generation Time: Feb 23, 2011 at 09:11 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
-CREATE DATABASE IF NOT EXISTS white_board;
-GRANT ALL ON white_board.* to 'whiteboard'@'localhost' IDENTIFIED BY 'password';
-USE white_board;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
