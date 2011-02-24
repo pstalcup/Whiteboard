@@ -1,3 +1,4 @@
 <?php
-	$db = mysqli_connect('localhost','alienuser','alien','aliendb') or die("Oh no failz!");
+   session_start();
+	$db = mysqli_connect('localhost','news','users','groups') or die("Oh no failz!");
 ?>
