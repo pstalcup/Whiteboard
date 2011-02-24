@@ -12,14 +12,14 @@
 			<table padding-left="5px" cellspacing="0">
 				<tr>
 				<td class="blank"></td>
-				<td class="tab2"><a href="main.html">home</a></td>
+				<td class="tab2"><a href="main.php">home</a></td>
 				<td class="tab1">register</td>
 				</tr>
 			</table></td>
 			<td><table width="63px"><tr><td></td></tr></table></td><td><table cellspacing="0" class="login2">
 				<tr><form>
 				<td padding-left="60px">username:<br/><input type="textfield" name ="username" size="16" maxlength="16"/></td>
-				<td>password:<br/><input type="password" name="password" size="16" maxlength="16"/><input type="submit" value="login"><a href="home.html">x</a></td>
+				<td>password:<br/><input type="password" name="password" size="16" maxlength="16"/><input type="submit" value="login"><a href="home.php">x</a></td>
 				</tr>
 			</table></td></tr>
 			</table>
