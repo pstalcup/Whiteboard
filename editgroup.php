@@ -12,16 +12,16 @@
 			<tr><td class="blank"></td>
 			
 			
-			<td class="tab4"><a href="home.html">home</a></td>
-			<td class="tab2"><a href="profile.html">profile</a></td>
-			<td class="tab3"><a href="calendar.html">calendar</a></td>
+			<td class="tab4"><a href="home.php">home</a></td>
+			<td class="tab2"><a href="profile.php">profile</a></td>
+			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab1">groups</td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.html"> logout</a></td>
+			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.php"> logout</a></td>
 			</tr></table>
 
 			<table cellspacing="0"><tr>
 			<td class="content">
-<a href="groups.html">view groups</a> | edit groups | <a href="creategroup.html">create a group</a><h2>header1</h2><h5>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </h5></td></tr>
+<a href="groups.php">view groups</a> | edit groups | <a href="creategroup.php">create a group</a><h2>header1</h2><h5>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </h5></td></tr>
 			</table
 		</div>
 	</body>

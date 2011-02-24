@@ -19,10 +19,10 @@
 			
 			
 			<td class="tab1">home</td>
-			<td class="tab2"><a href="profile.html">profile</a></td>
-			<td class="tab3"><a href="calendar.html">calendar</a></td>
-			<td class="tab4"><a href="groups.html">groups</a></td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.html"> logout</a></td>
+			<td class="tab2"><a href="profile.php">profile</a></td>
+			<td class="tab3"><a href="calendar.php">calendar</a></td>
+			<td class="tab4"><a href="groups.php">groups</a></td>
+			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.php"> logout</a></td>
 			</tr></table>
 			');
 			echo("<table cellspacing='0'><tr>");
@@ -55,7 +55,7 @@
 				<tr>
 				<td class="blank"></td>
 				<td class="tab1">home</td>
-				<td class="tab2"><a href="register.html">register</a></td>
+				<td class="tab2"><a href="register.php">register</a></td>
 				</tr>
 			</table></td>
 			<td><table width="63px"><tr><td></td></tr></table></td><td><table cellspacing="0" class="login2">
