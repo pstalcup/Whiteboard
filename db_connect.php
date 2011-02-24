@@ -1,4 +1,4 @@
 <?php
    session_start();
-	$db = mysqli_connect('localhost','news','users','groups') or die("Oh no failz!");
+	$db = mysqli_connect('localhost','whiteboard','password','white_board') or die("Oh no failz!");
 ?>
