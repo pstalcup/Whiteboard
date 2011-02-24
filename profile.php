@@ -12,11 +12,11 @@
 			<tr><td class="blank"></td>
 			
 			
-			<td class="tab2"><a href="home.html">home</a></td>
+			<td class="tab2"><a href="home.php">home</a></td>
 			<td class="tab1">profile</td>
-			<td class="tab3"><a href="calendar.html">calendar</a></td>
-			<td class="tab4"><a href="groups.html">groups</a></td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.html"> logout</a></td>
+			<td class="tab3"><a href="calendar.php">calendar</a></td>
+			<td class="tab4"><a href="groups.php">groups</a></td>
+			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.php"> logout</a></td>
 			</tr></table>
 
 			<table cellspacing="0"><tr>
