@@ -25,9 +25,9 @@
 			<td class="login"><font color="#ffffff">welcome username! | </font><a href="logout.php"> logout</a></td>
 			</tr></table>
 			');
-			echo("<table cellspacing='0'><tr>");
+			echo("<table cellspacing='0'><tr><td class='content'>");
 			//key time title value author
-			$query = "SELECT * FROM news order by time";
+			$query = "SELECT * FROM news order by time desc";
 			$result = mysqli_query($db,$query);
 			while($row = mysqli_fetch_array($result))
 			{
@@ -37,10 +37,9 @@
 				$author = $row['author'];
 				$id = $row['id'];
 				
-				echo("<td class='content'>");
-				echo("<h2>$title</h2><h5>$content</h5></td></tr>");
+				echo("<h2>$title</h2><h5>$content</h5>");
 			}
-			echo('</div>');
+			echo('</td></tr></div>');
 			echo('</body>');
 		}
 		else
@@ -65,8 +64,11 @@
 				</tr>
 			</table></td></tr>
 			</table>');
-			$query = "SELECT * FROM news order by time";
+			$query = "SELECT * FROM news order by time desc";
 			$result = mysqli_query($db,$query);
+			echo('<table cellspace="0">');
+			
+				echo("<td class='content'>");
 			while($result && $row = mysqli_fetch_array($result))
 			{
 				$title = $row['title'];
@@ -75,10 +77,9 @@
 				$author = $row['author'];
 				$id = $row['id'];
 				
-				echo("<td class='content'>");
-				echo("<h2>$title</h2><h5>$content</h5></td></tr>");
+				echo("<h2>$title</h2><h5>$content</h5>");
 			}
-			echo('</div>');
+			echo('</td></tr></div>');
 			echo('</body>');
 		}
 		?>
