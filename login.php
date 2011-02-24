@@ -36,7 +36,7 @@
 			   else
 				{
 					echo "<p>Could not log you in!</p>\n";
-					echo '<form method="post" action="home.html">
+					echo '<form method="post" action="home.php">
 						  <input type="submit" value="Back" name="back" />
 						  </form>';
 				}
