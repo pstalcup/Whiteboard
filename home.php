@@ -78,12 +78,6 @@
 				echo("<td class='content'>");
 				echo("<h2>$title</h2><h5>$content</h5></td></tr>");
 			}
-			if(!$result)
-			{
-				echo("<
-			}
-			echo('</div>');
-			echo('</body>');
 		}
 		?>
 </html>
