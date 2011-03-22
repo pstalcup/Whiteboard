@@ -73,9 +73,22 @@ INSERT INTO `news` (`key`, `time`, `title`, `value`, `author`) VALUES
 CREATE TABLE IF NOT EXISTS `users` (
   `userName` varchar(10) NOT NULL,
   `password` varchar(10) NOT NULL,
+  `email`    varchar(25) NOT NULL,
+  `bio`      blob NOT NULL,
+  `avatar`   varchar(25)NOT NULL, 
   PRIMARY KEY (`userName`)
+  CONSTRAINT user_userName_fk
+  FOREGIN KEY (`userName`)
+  REFERENCES my_contacts (userName)
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE IF NOT EXISTS `membership`(
+  `group` varchar(10) NOT NULL,
+  `userName` varchar(25) NOT NULL,
+  )
+ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Dumping data for table `users`
 --
