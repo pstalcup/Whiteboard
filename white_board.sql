@@ -3,15 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 23, 2011 at 09:11 PM
+-- Generation Time: Mar 21, 2011 at 09:32 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.1
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-CREATE DATABASE IF NOT EXISTS white_board;
-GRANT ALL ON white_board.* TO 'whiteboard'@'localhost' IDENTIFIED BY 'password';
-use whiteboard;
 
 
 
@@ -22,6 +16,11 @@ use whiteboard;
 
 --
 -- Database: `white_board`
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+CREATE DATABASE IF NOT EXISTS white_board;
+GRANT ALL ON white_board.* TO 'whiteboard'@'localhost' IDENTIFIED BY 'password';
+use white_board;
 --
 
 -- --------------------------------------------------------
@@ -31,14 +30,34 @@ use whiteboard;
 --
 
 CREATE TABLE IF NOT EXISTS `group` (
-  `group name` varchar(10) NOT NULL,
-  `group description` blob NOT NULL,
-  `group admin` varchar(10) NOT NULL,
-  PRIMARY KEY (`group name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `groupName` varchar(20) NOT NULL,
+  `groupdescription` blob NOT NULL,
+  `groupadmin` varchar(20) NOT NULL,
+  PRIMARY KEY (`groupName`)
+) TYPE=InnoDB;
 
 --
 -- Dumping data for table `group`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `membership`
+--
+
+CREATE TABLE IF NOT EXISTS `membership` (
+  `memberKey` int(99) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(10) NOT NULL,
+  `groupName` varchar(10) NOT NULL,
+  PRIMARY KEY (`memberKey`),
+  UNIQUE KEY `userName` (`userName`),
+  UNIQUE KEY `groupName` (`groupName`)
+) TYPE=InnoDB AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `membership`
 --
 
 
@@ -50,12 +69,12 @@ CREATE TABLE IF NOT EXISTS `group` (
 
 CREATE TABLE IF NOT EXISTS `news` (
   `key` int(11) NOT NULL AUTO_INCREMENT,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `time` timestamp NOT NULL,
   `title` varchar(20) NOT NULL,
   `value` blob NOT NULL,
   `author` varchar(20) NOT NULL,
   PRIMARY KEY (`key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) TYPE=InnoDB  AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `news`
@@ -73,28 +92,29 @@ INSERT INTO `news` (`key`, `time`, `title`, `value`, `author`) VALUES
 CREATE TABLE IF NOT EXISTS `users` (
   `userName` varchar(10) NOT NULL,
   `password` varchar(10) NOT NULL,
-  `email`    varchar(25) NOT NULL,
-  `bio`      blob NOT NULL,
-  `avatar`   varchar(25)NOT NULL, 
+  `eMail` varchar(30) NOT NULL,
+  `Bio` blob NOT NULL,
+  `Avatar` varchar(25) NOT NULL,
   PRIMARY KEY (`userName`)
-  CONSTRAINT user_userName_fk
-  FOREGIN KEY (`userName`)
-  REFERENCES my_contacts (userName)
-  
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) TYPE=InnoDB;
 
-
-CREATE TABLE IF NOT EXISTS `membership`(
-  `group` varchar(10) NOT NULL,
-  `userName` varchar(25) NOT NULL,
-  )
-ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userName`, `password`) VALUES
-('Dr.Pepper', 'password');
+INSERT INTO `users` (`userName`, `password`, `eMail`, `Bio`, `Avatar`) VALUES
+('Dr.Pepper', 'password', '', '', '');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `membership`
+--
+ALTER TABLE `membership`
+  ADD CONSTRAINT `membership_ibfk_2` FOREIGN KEY (`groupName`) REFERENCES `group` (`groupname`),
+  ADD CONSTRAINT `membership_ibfk_1` FOREIGN KEY (`userName`) REFERENCES `users` (`userName`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
