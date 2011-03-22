@@ -16,12 +16,12 @@
 			<td class="tab2"><a href="profile.php">profile</a></td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab1">groups</td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.php"> logout</a></td>
+			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a></td>
 			</tr></table>
 
 			<table cellspacing="0"><tr>
 			<td class="content">
-<a href="groups.php">view groups</a> | edit groups | <a href="creategroup.php">create a group</a><h2>header1</h2><h5>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </h5></td></tr>
+<a href="groups.php">view groups</a> | edit groups | <a href="creategroup.php">create a group</a> | <a href="joingroup.php">join a group</a><h2>header1</h2><h5>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </h5></td></tr>
 			</table
 		</div>
 	</body>

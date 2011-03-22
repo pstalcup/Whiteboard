@@ -12,16 +12,16 @@
 			<tr><td class="blank"></td>
 			
 			
-			<td class="tab4"><a href="home.html">home</a></td>
-			<td class="tab2"><a href="profile.html">profile</a></td>
-			<td class="tab3"><a href="calendar.html">calendar</a></td>
+			<td class="tab4"><a href="home.php">home</a></td>
+			<td class="tab2"><a href="profile.php">profile</a></td>
+			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab1">groups</td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.html"> logout</a></td>			</tr></table>
+			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a></td>			</tr></table>
 
 			<table cellspacing="0"><tr>
 			<td class="content">
 			
-<a href="groups.html">view groups</a> | <a href="editgroup.html">edit groups</a>  | create a group<h2>Create a Group!</h2><h5>			
+<a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a>  | create a group | <a href="joingroup.php">join a group</a><h2>Create a Group!</h2><h5>			
 			
 			<?php
 				if(isset($_POST['groupName']) && isset($_POST['groupAdmin']) && isset($_POST['groupDescription'])){

@@ -1,6 +1,4 @@
-
-
-
+<?php include("db_connect.php") ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -20,12 +18,12 @@
 			<td class="tab2"><a href="profile.php">profile</a></td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab1">groups</td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="logout.php"> logout</a></td>
+			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a></td>
 			</tr></table>
 
 			<table cellspacing="0"><tr>
 			<td class="content">
-view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php">create a group</a><h2>header1</h2><h5>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </h5></td></tr>
+view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php">create a group</a> | <a href="joingroup.php">join a group</a><h2>header1</h2><h5> </h5></td></tr>
 			</table
 		</div>
 	</body>

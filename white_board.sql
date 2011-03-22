@@ -29,7 +29,7 @@ use white_board;
 -- Table structure for table `group`
 --
 
-CREATE TABLE IF NOT EXISTS `group` (
+CREATE TABLE IF NOT EXISTS `groups` (
   `groupName` varchar(20) NOT NULL,
   `groupdescription` blob NOT NULL,
   `groupadmin` varchar(20) NOT NULL,
@@ -113,7 +113,7 @@ INSERT INTO `users` (`userName`, `password`, `eMail`, `Bio`, `Avatar`) VALUES
 -- Constraints for table `membership`
 --
 ALTER TABLE `membership`
-  ADD CONSTRAINT `membership_ibfk_2` FOREIGN KEY (`groupName`) REFERENCES `group` (`groupname`),
+  ADD CONSTRAINT `membership_ibfk_2` FOREIGN KEY (`groupName`) REFERENCES `groups` (`groupname`),
   ADD CONSTRAINT `membership_ibfk_1` FOREIGN KEY (`userName`) REFERENCES `users` (`userName`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
