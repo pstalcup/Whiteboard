@@ -1,4 +1,5 @@
 <?php include "db_connect.php"?>
+<?php include "lib/swift_required.php"?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -25,7 +26,22 @@
 			{
 				$username = $_POST['username'];
 				$password = $_POST['password'];
-				$query = "insert into users (username,password) values ('$username','$password');";
+				$email = $_POST['email'];
+				$mssg = "Welcome to Whiteboard! /n Your registered user name is $username and password is $password /n
+				         You will be recieving reminders to this address to keep you updated on 
+						 whats going on";
+				$query = "INSERT INTO USERS (userName,password,Email) values ('$username','$password','$email')";
+				
+				require_once 'lib/swift_required.php';
+				$message = Swift_Message::newInstance()
+				->setSubject('Whiteboard')
+				->setFrom('whiteBoard@whiteBoard.com')
+				->setTo($email)
+				->setBody($messg);
+				
+				
+				
+				
 				
 				echo($query);
 				
@@ -47,7 +63,7 @@
 			echo('
 			<table cellspacing="0"><tr>
 			<td class="content"><h2>Register</h2><h5><form action="register.php" method="post"><table><tr><td>Username</td><td><input type="text" name="username"></td>
-			<tr><td>Password</td><td><input type="password" name="password"></td></h5></td></tr><tr><td><input type="submit"></td></table>
+			<tr><td>Password</td><td><input type="password" name="password"></td><tr><td>Email</td><td><input type="text" name="email"></td></h5></td></tr><tr><td><input type="submit"></td></table>
 			');
 			}
 			?>

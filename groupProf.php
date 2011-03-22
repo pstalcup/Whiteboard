@@ -15,3 +15,4 @@ echo 'Group:'.$group_name.'</br>'
      'Admin:'.$group_admin.'</br>'
 	 'Info:'.$group_desc.'</br>';
 	 }
+	 
