@@ -24,84 +24,18 @@
 			<table cellspacing="0"><tr>
 			<td class="content">
 <a href="viewgroups.php">view groups</a> | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php">create a group</a> | join a group 
-<h2>Select a group to join</h2><h5>
-
-<h3>Current Abductions</h3>
+<h2>Join a group!</h2><h5>
+		
+<form method="post" action="join_group_submit.php">
+					<table>
 					
-					<?php
-						$query = "SELECT * FROM abduction;";
-						$result = mysqli_query($db,$query);
-						
-						if($_GET['d'] != '1')
-						{
-						
-							echo("<form method='get' action='list.php'><input type='hidden' name='d' value='1'>");
-							echo("<table>");
-						
-							echo("<tr><td><b>Details?</b></td><td><b>ID</b></td><td><b>Name</b></td><td><b>Date</b></td><td><b>Location</td></tr>");
-						
-							while($row = mysqli_fetch_array($result))
-							{
-								$id = $row['id'];
-								$name = $row['fname'] . ' ' . $row['lname'];
-								$date = $row['ab_date'];
-								$location = $row['city'] . ' ' . $row['state'];
-							
-								echo("<tr>");
-								echo("<td><input type='checkbox' name=$id value='1'></td>");
-								echo("<td>" . $id . "</td>");
-								echo("<td>" . $name . "</td>");
-								echo("<td>" . $date . "</td>");
-								echo("<td>" . $location . "</td>");
-								echo("</tr>");
-							}
-						
-							echo("</table>");
-							
-							echo("<input type='submit' value='See Details'></form>");
-						}
-						else
-						{
-							echo("<table>");
-							$i = 0;
-							while($row = mysqli_fetch_array($result))
-							{
-								if($_GET[$row["id"]] == "1")
-								{
-									$i++;
-									$id = $row['id'];
-									$name = $row["fname"] . ' ' . $row["lname"];
-									$gender = $row["gender"] == "female" ? "Female" : "Male";
-									$date = $row["ab_date"];
-									$city = $row["city"];
-									$state = $row["state"];
-									$scary = $row["scary"];
-									$info = $row["info"];
-									echo("
-											<tr><td>-</td><td></td></tr>
-											<tr><td><b>Name:</b><td> $name </td></tr>
-											<tr><td><b>Gender:</b><td> $gender </td></tr>
-											<tr><td><b>Date:</b><td> $date </td></tr>
-											<tr><td><b>Location:</b><td> $city, $state </td></tr>
-											<tr><td><b>Scary:</b><td> $scary scary </td></tr>
-											<tr><td><b>Extra Info:</b><td> $info </td></tr>
-										");
-								}
-							}
-							if($i == 0)
-							{
-								echo("<tr><td> No item selected! </td></tr>");
-							}
-							
-							echo("<tr><td><form method='post' action='list.php'><input type='submit' value='Go Bach'></form></td></tr>");
-							echo("</table>");
-							
-						}
-					?>
-
-
-
-
+					<tr><td>Name of group to join:</td><td> <input type="text" name="groupToJoin" size="50"></td></tr>				
+					<tr><td></td><td><input type="Submit" value="Submit"></td></tr>
+					
+					</table>
+					
+					</form>
+		
 </h5></td></tr>
 			</table
 		</div>

@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `groups` (
 --
 -- Dumping data for table `group`
 --
-
+INSERT INTO `groups` (`groupName`, `groupdescription`, `groupadmin`) VALUES
+('Soda', 'Sweet and Carbonated', 'CocaCola Company');
 
 -- --------------------------------------------------------
 
