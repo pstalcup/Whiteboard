@@ -1,3 +1,4 @@
+<?php include("db_connect.php") ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
@@ -24,27 +25,16 @@
 <a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a>  | create a group | <a href="joingroup.php">join a group</a><h2>Create a Group!</h2><h5>			
 			
 			<?php
-				if(isset($_POST['groupName']) && isset($_POST['groupAdmin']) && isset($_POST['groupDescription'])){
-				include "db_connect.php";	
-				$groupName = $_POST['groupName'];
-				$groupAdmin = $_POST['groupAdmin'];
-				$groupDescription = $_POST['groupDescription'];
-				$query = "INSERT INTO group (group_name, group_description, group_admin) VALUES ('$groupName', '$groupAdmin', '$groupDescription')";
-				mysqli_query($db, $query);			
-				}
-				else{
-				echo('<form method="post" action="createGroup.php">
+				
+				echo('<form method="post" action="createGroup_submit.php">
 					<table>
-					<tr><td><label for="groupname">Groupname:</label></td>
-					<td><input type="text" id="groupName" name="groupname" /></td><br />
-					<tr><td><label for="groupadmin">GroupAdmin:</label></td>
-					<td><input type="text" id="groupAdmin" name="groupadmin" /></td><br />
-					<tr><td><label for="groupdescription">GroupDescription:</label></td>
-					<td><input type="text" id="groupDescription" name="groupdescription" /></td><br />
+					<tr><td>Group Name:</td><td> <input type="text" name="groupName" size="50"></td></tr>				
+					<tr><td>Group Admin:</td><td> <input type="text" name="groupAdmin" size="50"></td></tr>
+					<tr><td>GroupDescription:</td><td><textarea rows="10" cols="50" name="groupDescription"></textarea></td></tr>
 					<tr><td><input type="submit" value="Submit" name="add group" /></td>
 					</table>
 				</form>');			
-				}
+				
 			?>
             </h5></td></tr>
 			</table

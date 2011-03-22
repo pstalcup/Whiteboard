@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 INSERT INTO `groups` (`groupName`, `groupdescription`, `groupadmin`) VALUES
 ('Soda', 'Sweet and Carbonated', 'CocaCola Company');
 
+
 -- --------------------------------------------------------
 
 --
