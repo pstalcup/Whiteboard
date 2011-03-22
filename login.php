@@ -18,7 +18,7 @@
 			</table>
 
 			<table cellspacing="0"><tr>
-			<td class="content"><h2>header1</h2><h5> 
+			<td class="content"><h5> 
 			<?php
 
 			  $name = $_POST['username'];
@@ -28,10 +28,9 @@
 			   $result = mysqli_query($db, $query);
 			   if ($row = mysqli_fetch_array($result))
 			   {
-					
-					echo "<p>Thanks for logging in, $name</p>\n";
-					echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/Whiteboard/home.php">';
 					$_SESSION['username'] = $row['userName'];
+					echo "<p>Thanks for logging in, $name</p>\n";
+					echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/Whiteboard/home.php">';					
 			   }
 			   else
 				{

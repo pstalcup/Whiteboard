@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
@@ -16,7 +20,7 @@
 			<td class="tab2"><a href="profile.php">profile</a></td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab1">groups</td>
-			<td class="login"><font color="#ffffff">welcome username! | </font><a href="main.php"> logout</a></td>
+			<td class="login"><font color="#ffffff">welcome username! | </font><a href="logout.php"> logout</a></td>
 			</tr></table>
 
 			<table cellspacing="0"><tr>

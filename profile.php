@@ -17,7 +17,7 @@
 			<td class="tab1">profile</td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab4"><a href="groups.php">groups</a></td>
-			<td class="login"><font color="#ffffff">Welcome! | </font><a href="main.php"> logout</a></td>
+			<td class="login"><font color="#ffffff">Welcome! | </font><a href="logout.php"> logout</a></td>
 			</tr></table>
 
 			<table cellspacing="0"><tr>
@@ -73,5 +73,6 @@
 			
 			</table
 		</div>
+		<a href="editprofile.php">edit profile</a>
 	</body>
 </html>
