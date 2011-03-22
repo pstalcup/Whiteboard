@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`userName`, `password`, `eMail`, `Bio`, `Avatar`) VALUES
-('Dr.Pepper', 'password', '', '', '');
+('Dr.Pepper', 'password', 'drpepper@gmail.com', 'I am a soda.  I am available in both regular and diet forms.  I taste delicious.', 'avatars/drpepper_logo.jpg');
 
 --
 -- Constraints for dumped tables
