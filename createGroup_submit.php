@@ -5,10 +5,11 @@
    $admin = $_POST['groupAdmin'];
    $description = $_POST['groupDescription']; 
    
-   $query = "INSERT INTO groups (groupName, groupdescription, groupadmin) VALUES ('$gname', '$admin', '$description')";
+   $query = "INSERT INTO groups (groupName, groupadmin, groupdescription) VALUES ('$gname', '$admin', '$description')";
 				      
    echo($query);
    
+  
    mysqli_query($db,$query) or die("Query Failed LOLZ");
    
    //echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/Whiteboard/profile.php">';

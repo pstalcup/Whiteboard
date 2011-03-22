@@ -51,8 +51,8 @@ INSERT INTO `groups` (`groupName`, `groupdescription`, `groupadmin`) VALUES
 
 CREATE TABLE IF NOT EXISTS `membership` (
   `memberKey` int(99) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(10) NOT NULL,
-  `groupName` varchar(10) NOT NULL,
+  `userName` varchar(20) NOT NULL,
+  `groupName` varchar(20) NOT NULL,
   PRIMARY KEY (`memberKey`),
   UNIQUE KEY `userName` (`userName`),
   UNIQUE KEY `groupName` (`groupName`)
@@ -92,7 +92,7 @@ INSERT INTO `news` (`key`, `time`, `title`, `value`, `author`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `userName` varchar(10) NOT NULL,
+  `userName` varchar(20) NOT NULL,
   `password` varchar(10) NOT NULL,
   `eMail` varchar(30) NOT NULL,
   `Bio` blob NOT NULL,
