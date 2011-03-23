@@ -68,20 +68,21 @@
 			?>
 			</tr></td>
 			<tr><td>
+			
 			<?php
+			  echo("<h2>$name's Groups:</h2>");
 			  $name = $_SESSION['username'];			 
 			  $query = "SELECT u.userName, g.groupName FROM users u inner join groups 
 g INNER JOIN memberJunction m ON u.userName = m.userName 
 AND g.groupName = m.groupName WHERE u.username = '$name'";
 			  $result = mysqli_query($db, $query);
-			  echo '<table  border="1">';
-			  echo("<tr><td>$name's Groups</td></tr>");
+			  echo '<table><h5>';
 			  while($row = mysqli_fetch_array($result)){
 				
 				$content = $row['groupName'];
-				echo("<td>$content</td></tr>");
+				echo("<tr><td>$content</td></tr>");
 			}
-			echo "</table>";
+			echo "</h5></table>";
 			
 			?>
 			</td></tr>	
