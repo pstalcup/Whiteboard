@@ -118,6 +118,26 @@ ALTER TABLE `membership`
   ADD CONSTRAINT `membership_ibfk_2` FOREIGN KEY (`groupName`) REFERENCES `groups` (`groupname`),
   ADD CONSTRAINT `membership_ibfk_1` FOREIGN KEY (`userName`) REFERENCES `users` (`userName`);
 
+
+--
+-- Table structure for table `memberJunction`
+--
+CREATE TABLE IF NOT EXISTS `memberJunction` (
+  `userName` varchar(20) NOT NULL,
+  `groupName` varchar(20) NOT NULL,
+  PRIMARY KEY (`userName`,`groupName`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONS FOR TABLE `memberJunction`:
+--   `groupName`
+--       `groups` -> `groupName`
+--   `userName`
+--       `users` -> `userName`
+--
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

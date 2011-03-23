@@ -67,12 +67,30 @@
 			}			
 			?>
 			</tr></td>
+			<tr><td>
+			<?php
+			  $name = $_SESSION['username'];			 
+			  $query = "SELECT u.userName, g.groupName FROM users u inner join groups 
+g INNER JOIN memberJunction m ON u.userName = m.userName 
+AND g.groupName = m.groupName WHERE u.username = '$name'";
+			  $result = mysqli_query($db, $query);
+			  echo '<table  border="1">';
+			  echo("<tr><td>$name's Groups</td></tr>");
+			  while($row = mysqli_fetch_array($result)){
+				
+				$content = $row['groupName'];
+				echo("<td>$content</td></tr>");
+			}
+			echo "</table>";
 			
+			?>
+			</td></tr>	
 			
 			</h4></td></tr>
 			
 			</table
 		</div>
+		</br>
 		<a href="editprofile.php">edit profile</a>
 	</body>
 </html>

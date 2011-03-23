@@ -28,19 +28,21 @@ view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php
 			<td class="content"><h5>
 			<?php
 			  $name = $_SESSION['username'];			 
-			  $query = "SELECT u.userName, g.groupName FROM users u inner join groups 
-g INNER JOIN membership m ON u.userName = m.userName 
-AND g.groupName = m.groupName WHERE u.username = '$name'";
+			  $query = "SELECT * FROM groups";
 			  $result = mysqli_query($db, $query);
+			  echo ("<h2>Existing Groups</h2>");
 			  echo '<table  border="1">';
-			  echo("<tr><td>User</td><td>Group</td></tr>");
+			  echo("<tr><td>Group Name</td><td>Admin</td><td>Description</td></tr>");
 			  while($row = mysqli_fetch_array($result)){
-				$content = $row['userName'];				
+				$content = $row['groupName'];
 				echo("<tr><td>$content</td>");
-				$content2 = $row['groupName'];
-				echo("<td>$content2</td></tr>");
-			echo "</table>";
+				$content2 = $row['groupadmin'];
+				echo("<td>$content2</td>");
+				$content3 = $row['groupdescription'];
+				echo("<td>$content3</td></tr>");
 			}
+			echo "</table>";
+			
 			?>
 			</tr></td>
 			

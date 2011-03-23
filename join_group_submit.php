@@ -4,7 +4,7 @@
    $group = $_POST['groupToJoin'];
    $name = $_SESSION['username'];
    
-   $query= "INSERT INTO membership (userName, groupName) VALUES ('$name', '$group')";
+   $query= "INSERT INTO memberJunction (userName, groupName) VALUES ('$name', '$group')";
       
    echo($query);
    
