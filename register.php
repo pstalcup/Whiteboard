@@ -32,13 +32,16 @@
 						 whats going on";
 				$query = "INSERT INTO USERS (userName,password,Email) values ('$username','$password','$email')";
 				
+				
 				require_once 'lib/swift_required.php';
+				$transport = Swift_SmtpTransport::newInstance('localhost', 25);
+				$mailer = Swift_Mailer::newInstance($transport);
 				$message = Swift_Message::newInstance()
 				->setSubject('Whiteboard')
-				->setFrom('whiteBoard@whiteBoard.com')
-				->setTo($email)
+				->setFrom (array('friends@Whiteboard.com'=>'Whiteboard'))
+				->setTo(array($email => $username))
 				->setBody($messg);
-				
+				($mailer->send($message))
 				
 				
 				
