@@ -41,12 +41,11 @@
 				->setFrom (array('friends@Whiteboard.com'=>'Whiteboard'))
 				->setTo(array($email => $username))
 				->setBody($messg);
-				($mailer->send($message))
+				($mailer->send($message));
 				
 				
 				
-				
-				echo($query);
+			
 				
 				
 				
