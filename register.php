@@ -33,7 +33,7 @@
 				$query = "INSERT INTO USERS (userName,password,Email) values ('$username','$password','$email')";
 				
 				
-				require_once 'lib/swift_required.php';
+				/*require_once 'lib/swift_required.php';
 				$transport = Swift_SmtpTransport::newInstance('localhost', 25);
 				$mailer = Swift_Mailer::newInstance($transport);
 				$message = Swift_Message::newInstance()
@@ -41,7 +41,7 @@
 				->setFrom (array('friends@Whiteboard.com'=>'Whiteboard'))
 				->setTo(array($email => $username))
 				->setBody($messg);
-				($mailer->send($message));
+				($mailer->send($message)); */
 				
 				
 				
