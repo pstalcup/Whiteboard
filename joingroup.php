@@ -24,20 +24,84 @@
 			<table cellspacing="0"><tr>
 			<td class="content">
 <a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php">create a group</a> | join a group 
-<h2>Join a group!</h2><h5>
-		
-<form method="post" action="join_group_submit.php">
-					<table>
-					
-					<tr><td>Name of group to join:</td><td> <input type="text" name="groupToJoin" size="50"></td></tr>				
-					<tr><td></td><td><input type="Submit" value="Submit"></td></tr>
-					
-					</table>
-					
-					</form>
-		
-</h5></td></tr>
-			</table
+<h2>Join a group!</h2>
+
+<?php
+						$name = $_SESSION['username'];
+						$query = "SELECT g.groupName, g.groupadmin, g.groupdescription FROM groups g";
+						$result = mysqli_query($db,$query);
+						
+						if($_GET['d'] != '1')
+						{
+							echo("<form method='get' action='joingroup.php'><input type='hidden' name='d' value='1'>");
+							echo("<table border = 1>");
+						
+							echo("<tr><td><b>Join?</b></td><td><b>Group</b></td><td><b>Admin</b></td><td><b>Description</b></td><td><b>Member</b></td></tr>");
+						
+							while($row = mysqli_fetch_array($result))
+							{
+								$groupName = $row['groupName'];
+								$admin = $row['groupadmin'];
+								$description = $row['groupdescription'];
+								$tempquery = "SELECT COUNT(userName) FROM memberjunction m WHERE m.groupname = '$groupName' AND m.username = '$name'";
+								$tempresult = mysqli_query($db, $tempquery);
+								$array = mysqli_fetch_array($tempresult);
+								$count = $array['COUNT(userName)'];
+								
+								
+								echo("<tr>");
+								echo("<td><input type='checkbox' name=$groupName value='1'></td>");
+								echo("<td>" . $groupName . "</td>");
+								echo("<td>" . $admin . "</td>");
+								echo("<td>" . $description . "</td>");
+								if($count > 0){
+									echo("<td>" . Y . "</td>");
+								}
+								else{
+									echo("<td>" . N . "</td>");
+								}
+								echo("</tr>");
+								
+							}
+						
+							echo("</table><br>");
+							
+							echo("<input type='submit' value='Join Selected'></form>");
+						}
+						else
+						{
+							echo("<table><tr><b>Joined:</b></tr>");
+							$i = 0;
+							while($row = mysqli_fetch_array($result))
+							{
+								if($_GET[$row["groupName"]] == "1")
+								{
+									$i++;
+									$groupName = $row['groupName'];
+									$admin = $row['groupadmin'];
+									$description = $row['groupdescription'];
+									
+									$query2 = "INSERT INTO memberjunction VALUES ('$name', '$groupName')";
+									mysqli_query($db,$query2) or die($query2);
+									echo("	
+											<tr><td><br></td><td></td></tr>
+											<tr><td><b>Group:</b><td> $groupName </td></tr>
+											<tr><td><b>Admin:</b><td> $admin </td></tr>
+											<tr><td><b>Description:</b><td> $description </td></tr>
+										");
+								}
+							}
+							if($i == 0)
+							{
+								echo("<tr><td> No item selected! </td></tr>");
+							}
+							
+							echo("<tr><td><form method='post' action='joingroup.php'><input type='submit' value='Go Back'></form></td></tr>");
+							echo("</table>");
+							
+						}
+					?>
+
 		</div>
 	</body>
 </html>
