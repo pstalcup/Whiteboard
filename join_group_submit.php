@@ -10,5 +10,5 @@
    
    mysqli_query($db,$query) or die("Query Failed LOLZ");
    
-   echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/Whiteboard/groups.php">';
+  // echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/Whiteboard/groups.php">';
 ?>

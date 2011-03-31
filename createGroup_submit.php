@@ -2,13 +2,14 @@
    include('db_connect.php');
 
    $gname = $_POST['groupName'];
-   $admin = $_POST['groupAdmin'];
+   $admin = $_SESSION['username'];
    $name = $_SESSION['username'];
    $description = $_POST['groupDescription']; 
+   $info = $_POST['shortInfo'];
    
-   $query = "INSERT INTO groups (groupName, groupadmin, groupdescription) VALUES ('$gname', '$admin', '$description')";
+   $query = "INSERT INTO groups (groupName, groupadmin, groupdescription, shortInfo) VALUES ('$gname', '$admin', '$description', '$info')";
 
-   echo($query);
+   //echo($query);
    
   
    mysqli_query($db,$query) or die("Query Failed LOLZ");

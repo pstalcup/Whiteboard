@@ -47,7 +47,7 @@ view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php
 			  
 			  while($row = mysqli_fetch_array($result)){
 				$content = $row['groupadmin'];				
-				echo("<h4>Admin:	</h4><h5>$content</h5>");
+				echo("<h4>Admin:	</h4><h5><a href='userProf.php?user=$content'>$content</a></h5>");
 				
 			}
 			

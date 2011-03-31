@@ -36,7 +36,7 @@ view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php
 			  while($row = mysqli_fetch_array($result)){
 				$content = $row['groupName'];
 				echo("<tr><td><a href='groupProf.php?group=$content'>$content</a></td>");
-				$content2 = $row['groupdescription'];
+				$content2 = $row['shortInfo'];
 				echo("<td>$content2</td></tr>");
 			}
 			echo "</table>";

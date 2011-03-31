@@ -28,7 +28,7 @@
 
 <?php
 						$name = $_SESSION['username'];
-						$query = "SELECT g.groupName, g.groupadmin, g.groupdescription FROM groups g";
+						$query = "SELECT g.groupName, g.groupadmin, g.shortInfo FROM groups g";
 						$result = mysqli_query($db,$query);
 						
 						if($_GET['d'] != '1')
@@ -42,7 +42,7 @@
 							{
 								$groupName = $row['groupName'];
 								$admin = $row['groupadmin'];
-								$description = $row['groupdescription'];
+								$description = $row['shortInfo'];
 								$tempquery = "SELECT COUNT(userName) FROM memberjunction m WHERE m.groupname = '$groupName' AND m.username = '$name'";
 								$tempresult = mysqli_query($db, $tempquery);
 								$array = mysqli_fetch_array($tempresult);

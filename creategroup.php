@@ -28,9 +28,9 @@
 				
 				echo('<form method="post" action="createGroup_submit.php">
 					<table>
-					<tr><td>Group Name:</td><td> <input type="text" name="groupName" size="50"></td></tr>				
-					<tr><td>Group Admin:</td><td> <input type="text" name="groupAdmin" size="50"></td></tr>
-					<tr><td>GroupDescription:</td><td><textarea rows="10" cols="50" name="groupDescription"></textarea></td></tr>
+					<tr><td>Group Name:</td><td> <input type="text" name="groupName" size="50"></td></tr>
+					<tr><td>Brief Description (1 sentence):</td><td><textarea rows="2" cols="50" name="shortInfo"></textarea></td></tr>					
+					<tr><td>Full Description:</td><td><textarea rows="10" cols="50" name="groupDescription"></textarea></td></tr>
 					<tr><td><input type="submit" value="Submit" name="add group" /></td>
 					</table>
 				</form>');			
