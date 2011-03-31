@@ -23,8 +23,8 @@
 
 			<table cellspacing="0"><tr>
 			<td class="content">
-<a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php">create a group</a> | join a group 
-<h2>Join a group!</h2>
+<a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php">create a group</a> | join/unjoin a group 
+<h2>Add or remove yourself from a group!</h2>
 
 <?php
 						$name = $_SESSION['username'];
@@ -36,7 +36,7 @@
 							echo("<form method='get' action='joingroup.php'><input type='hidden' name='d' value='1'>");
 							echo("<table border = 1>");
 						
-							echo("<tr><td><b>Join?</b></td><td><b>Group</b></td><td><b>Admin</b></td><td><b>Description</b></td><td><b>Member</b></td></tr>");
+							echo("<tr><td><b>Select</b></td><td><b>Group</b></td><td><b>Admin</b></td><td><b>Description</b></td><td><b>Member</b></td></tr>");
 						
 							while($row = mysqli_fetch_array($result))
 							{
@@ -66,11 +66,11 @@
 						
 							echo("</table><br>");
 							
-							echo("<input type='submit' value='Join Selected'></form>");
+							echo("<input type='submit' value='Join/Unjoin Selected'></form>");
 						}
 						else
 						{
-							echo("<table><tr><b>Joined:</b></tr>");
+							echo("<table><tr><b>Action Performed On:</b></tr>");
 							$i = 0;
 							while($row = mysqli_fetch_array($result))
 							{
@@ -80,14 +80,25 @@
 									$groupName = $row['groupName'];
 									$admin = $row['groupadmin'];
 									$description = $row['groupdescription'];
-									
-									$query2 = "INSERT INTO memberjunction VALUES ('$name', '$groupName')";
+									$tempquery = "SELECT COUNT(userName) FROM memberjunction m WHERE m.groupname = '$groupName' AND m.username = '$name'";
+									$tempresult = mysqli_query($db, $tempquery);
+									$array = mysqli_fetch_array($tempresult);
+									$count = $array['COUNT(userName)'];
+									if($count == 0){									
+										$query2 = "INSERT INTO memberjunction VALUES ('$name', '$groupName')";
+										$join = "JOINED";
+									}
+									else{
+										$query2 = "DELETE FROM memberjunction WHERE userName= '$name' AND groupName = '$groupName'";
+										$join = "UNJOINED";
+									}
 									mysqli_query($db,$query2) or die($query2);
 									echo("	
 											<tr><td><br></td><td></td></tr>
 											<tr><td><b>Group:</b><td> $groupName </td></tr>
 											<tr><td><b>Admin:</b><td> $admin </td></tr>
 											<tr><td><b>Description:</b><td> $description </td></tr>
+											<tr><td><b>ACTION:</b><td>$join</td></tr>
 										");
 								}
 							}
