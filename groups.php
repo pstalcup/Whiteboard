@@ -32,14 +32,12 @@ view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php
 			  $result = mysqli_query($db, $query);
 			  echo ("<h2>Existing Groups</h2>");
 			  echo '<table  border="1">';
-			  echo("<tr><td><b>Group Name</b></td><td><b>Admin</b></td><td><b>Description</b></td></tr>");
+			  echo("<tr><td><b>Group Name</b></td><td><b>Description</b></td></tr>");
 			  while($row = mysqli_fetch_array($result)){
 				$content = $row['groupName'];
-				echo("<tr><td>$content</td>");
-				$content2 = $row['groupadmin'];
-				echo("<td>$content2</td>");
-				$content3 = $row['groupdescription'];
-				echo("<td>$content3</td></tr>");
+				echo("<tr><td><a href='groupProf.php?group=$content'>$content</a></td>");
+				$content2 = $row['groupdescription'];
+				echo("<td>$content2</td></tr>");
 			}
 			echo "</table>";
 			
