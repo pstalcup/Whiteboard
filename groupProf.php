@@ -62,7 +62,7 @@ AND g.groupName = m.groupName WHERE m.groupName = '$grp'";
 			  while($row = mysqli_fetch_array($result)){
 				
 				$content = $row['userName'];
-				echo("<tr><td>$content</td></tr>");
+				echo("<tr><td><a href='userProf.php?user=$content'>$content</a></td>");
 			}
 			
 			echo "</h5></table>";
