@@ -25,7 +25,7 @@
 			<form method="post" action="prof_edits_submitted.php">
 					<table>
 					
-					<tr><td>New Bio</td><td><textarea rows="10" cols="50" name="Bio" placeholder= 
+					<tr><td>New Bio</td><td><textarea rows="10" cols="50" name="Bio" value= 
 					<?php
 					 $name = $_SESSION['username'];			 
 					 $query = "select Bio from users WHERE username = '$name'";
@@ -37,7 +37,7 @@
 					}			
 					?>
 					</textarea></td></tr>
-					<tr><td>New Email</td><td> <input type="text" name="email" size="50" placeholder=
+					<tr><td>New Email</td><td> <input type="text" name="email" size="50" value=
 					<?php
 					 $name = $_SESSION['username'];			 
 					 $query = "select eMail from users WHERE username = '$name'";
@@ -51,7 +51,7 @@
 					>
 					
 					</td></tr>	
-					<tr><td>Enter path to new avatar</td><td> <input type="text" name="avatar" size="50" placeholder=
+					<tr><td>Enter path to new avatar</td><td> <input type="text" name="avatar" size="50" value=
 				    <?php
 					 $name = $_SESSION['username'];			 
 					 $query = "select avatar from users WHERE username = '$name'";
