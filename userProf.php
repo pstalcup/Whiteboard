@@ -41,6 +41,13 @@
 				$content = $row['Avatar'];	
 				echo("<h5><img src= $content /></h5>");
 			}
+			   $query = "select Bio from users WHERE userName = '$user'";
+			   $result = mysqli_query($db, $query);
+			  
+			  while($row = mysqli_fetch_array($result)){
+				$content = $row['Bio'];				
+				echo("<h4>Bio:	</h4><h5>$content</h5>");
+			}			 
 			 echo("<tr><td><h4>Email:</h4>");
 			   $query = "select email from users WHERE username = '$user'";
 			   $result = mysqli_query($db, $query);

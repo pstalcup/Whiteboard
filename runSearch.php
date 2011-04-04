@@ -25,7 +25,7 @@
 			<td class='content'>
 			<?php 
 			//echo('hi'); 
-			$s = $_GET['search'];
+			$s = mysqli_real_escape_string($db,$_GET['search']);
    
 			$a = "'%".$s."'";
 			$b = "'".$s."%'";
@@ -36,10 +36,14 @@
 		   $query = "SELECT * FROM users WHERE userName LIKE $a OR userName LIKE $b OR userName LIKE $c 
 			OR email LIKE $a OR email LIKE $b OR email LIKE $c;";
 			
+			//mysqli_real_escape_string($db, $query);
+			
 		   $result = mysqli_query($db,$query);
 
 		   $query2 = "SELECT * FROM groups WHERE groupName LIKE $a OR groupName LIKE $b OR groupName LIKE $c 
 		    OR shortInfo LIKE $a OR shortInfo LIKE $b OR shortInfo LIKE $c;";
+			
+			//mysqli_real_escape_string($db, $query2);
 		   //echo($query);
 		   $result2 = mysqli_query($db,$query2);
 			echo($s == "" ? "No Term" : "Search Term: ".$s);
