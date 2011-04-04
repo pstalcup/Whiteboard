@@ -22,9 +22,9 @@
 			<td class="tab2"><a href="profile.php">profile</a></td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab4"><a href="groups.php">groups</a></td>
-			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a></td>
-			</tr></table>
-			');
+			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a>');
+			include('searchbar.html');
+			echo("</td></tr></table>");
 			echo("<table cellspacing='0'><tr><td class='content'>");
 			//key time title value author
 			$query = "SELECT * FROM news order by time desc";

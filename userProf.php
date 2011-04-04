@@ -38,7 +38,7 @@
 			   $query = "select Avatar from users WHERE username = '$user'";
 			   $result = mysqli_query($db, $query);
 			  while($row = mysqli_fetch_array($result)){
-				$content = $row['Avatar'];				
+				$content = $row['Avatar'];	
 				echo("<h5><img src= $content /></h5>");
 			}
 			 echo("<tr><td><h4>Email:</h4>");
