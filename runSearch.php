@@ -47,19 +47,20 @@
 			echo("<table>");
 			if(mysqli_num_rows($result)>0)
 			{
-				echo("<table>");
+				//echo("<table>");
 				echo("Users:<br>"); 
 				while($row = mysqli_fetch_array($result))
-			{
+				{
 				$user = $row["userName"];
 				$email = $row["eMail"];
 				echo("<tr><td><a href='userProf.php?user=$user'>$user</a></td></tr><tr><td>$email</td></tr><tr></tr>");
-				echo("</table><br>");
+				//echo("</table><br>");
+				}
 			}
-			}
+			echo("<table>");
 			if(mysqli_num_rows($result2)>0)
 			{
-				echo("<table>");
+				//echo("<table>");
 				echo("Groups:<br>"); 
 				while($row = mysqli_fetch_array($result2))
 				{
@@ -67,10 +68,11 @@
 				$info = $row["shortInfo"];
 				echo("<tr><td><a href='groupProf.php?group=$group'>$group</a></td></tr><tr><td>$info</td></tr><tr></tr>");
 				}
-				echo("</table><br>");
+				//echo("</table><br>");
 			}
+			echo("<table>");
 			
-	
+			
 			if($result)
 			{
 				echo(mysqli_num_rows($result) . " users found <br>"); 
