@@ -14,7 +14,7 @@
 			<tr><td class="blank"></td>
 			
 			
-			<td class="tab1">home</td>
+			<td class="tab2"><a href= "home.php">home</a></td>
 			<td class="tab2"><a href="profile.php">profile</a></td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
 			<td class="tab4"><a href="groups.php">groups</a></td>
