@@ -47,6 +47,7 @@
 			echo("<table>");
 			if(mysqli_num_rows($result)>0)
 			{
+				echo("<table>");
 				echo("Users:<br>"); 
 				while($row = mysqli_fetch_array($result))
 			{
@@ -58,6 +59,7 @@
 			}
 			if(mysqli_num_rows($result2)>0)
 			{
+				echo("<table>");
 				echo("Groups:<br>"); 
 				while($row = mysqli_fetch_array($result2))
 				{
