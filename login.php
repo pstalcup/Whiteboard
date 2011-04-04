@@ -21,8 +21,8 @@
 			<td class="content"><h5> 
 			<?php
 
-			  $name = $_POST['username'];
-			  $pw = $_POST['password'];
+			  $name = mysqli_real_escape_string($db,$_POST['username']);
+			  $pw = mysqli_real_escape_string($db,$_POST['password']);
 
 			   $query = "select * from users WHERE username = '$name' AND password ='$pw'";
 			   $result = mysqli_query($db, $query);
