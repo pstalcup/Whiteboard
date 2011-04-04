@@ -25,9 +25,46 @@
 			<form method="post" action="prof_edits_submitted.php">
 					<table>
 					
-					<tr><td>New Bio</td><td><textarea rows="10" cols="50" name="Bio"></textarea></td></tr>
-					<tr><td>New Email</td><td> <input type="text" name="email" size="50"></td></tr>				
-					<tr><td>Enter path to new avatar</td><td> <input type="text" name="avatar" size="50"></td></tr>		
+					<tr><td>New Bio</td><td><textarea rows="10" cols="50" name="Bio" placeholder= 
+					<?php
+					 $name = $_SESSION['username'];			 
+					 $query = "select Bio from users WHERE username = '$name'";
+					 $result = mysqli_query($db, $query);
+			  
+					while($row = mysqli_fetch_array($result)){
+						$content = $row['Bio'];				
+						echo("<h5>$content");
+					}			
+					?>
+					</textarea></td></tr>
+					<tr><td>New Email</td><td> <input type="text" name="email" size="50" placeholder=
+					<?php
+					 $name = $_SESSION['username'];			 
+					 $query = "select eMail from users WHERE username = '$name'";
+					 $result = mysqli_query($db, $query);
+			  
+					while($row = mysqli_fetch_array($result)){
+						$content = $row['eMail'];				
+						echo("$content");
+					}			
+					?>
+					>
+					
+					</td></tr>	
+					<tr><td>Enter path to new avatar</td><td> <input type="text" name="avatar" size="50" placeholder=
+				    <?php
+					 $name = $_SESSION['username'];			 
+					 $query = "select avatar from users WHERE username = '$name'";
+					 $result = mysqli_query($db, $query);
+			  
+					while($row = mysqli_fetch_array($result)){
+						$content = $row['avatar'];				
+						echo("$content");
+					}			
+					?>
+					>
+					
+					</td></tr>		
 					<tr><td></td><td><input type="Submit" value="Save Edits"></td></tr>
 					
 					</table>
