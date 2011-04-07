@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2011 at 09:03 PM
+-- Generation Time: Apr 06, 2011 at 09:27 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -158,6 +158,23 @@ CREATE TABLE IF NOT EXISTS `news` (
 
 INSERT INTO `news` (`key`, `time`, `title`, `value`, `author`) VALUES
 (1, '2011-02-23 19:36:30', 'Mid Term Exam', 0x496d20667265616b696e67206f75742121, 'Thomas Jefferson');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userevents`
+--
+
+CREATE TABLE IF NOT EXISTS `userevents` (
+  `userID` varchar(20) NOT NULL,
+  `eventID` int(11) NOT NULL,
+  UNIQUE KEY `userID` (`userID`,`eventID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userevents`
+--
+
 
 -- --------------------------------------------------------
 
