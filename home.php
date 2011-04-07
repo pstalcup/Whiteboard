@@ -75,7 +75,7 @@
 			while($result && $row = mysqli_fetch_array($result))
 			{
 				$title = $row['title'];
-				$content = $row['value'];
+				$content = str_replace("\n","<br>",$row['value']);
 				$time = $row['time'];
 				$author = $row['author'];
 				$id = $row['id'];
