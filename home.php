@@ -25,7 +25,10 @@
 			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a>');
 			include('searchbar.html');
 			echo("</td></tr></table>");
-			echo("<table cellspacing='0'><tr><td class='content'>");
+			echo("
+			<table cellspacing='0'><tr><td class='content'>
+			<a href='events.php'>My Events</a> | <a href='viewCalendar.php'>View Calendar</a>
+			");
 			//key time title value author
 			$query = "SELECT * FROM news order by time desc";
 			$result = mysqli_query($db,$query);

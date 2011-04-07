@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2011 at 08:40 PM
+-- Generation Time: Apr 06, 2011 at 09:03 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -22,7 +22,6 @@ CREATE DATABASE IF NOT EXISTS white_board;
 GRANT ALL ON white_board.* TO 'whiteboard'@'localhost' IDENTIFIED BY 'password';
 use white_board;
 --
---
 
 -- --------------------------------------------------------
 
@@ -32,6 +31,8 @@ use white_board;
 
 CREATE TABLE IF NOT EXISTS `events` (
   `event_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` blob NOT NULL,
   `event_date` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
