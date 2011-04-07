@@ -27,7 +27,7 @@
 			echo("</td></tr></table>");
 			echo("
 			<table cellspacing='0'><tr><td class='content'>
-			<a href='events.php'>View My Events</a>
+			<a href='events.php'>View My Events</a> 
 			");
 			//key time title value author
 			$query = "SELECT * FROM news order by time desc";

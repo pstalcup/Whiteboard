@@ -22,59 +22,52 @@
 
 			<table cellspacing="0"><tr>
 			<td class="content">
-			<a href="createEvent.php">Create Event</a>			
+			<a href="createEvent.php">Create Event</a> | <a href='addEvent.php'>Add Event</a>	
 			<table>
 			<tr><td>			
 			<tr><td><h2>Events</h2>
 			<?php
 			  $name = $_SESSION['username'];		  
-			  $query = "select name FROM events WHERE username = '$name'";
+			  $query = "select e.* FROM users u INNER JOIN events e INNER JOIN userevents ue 
+			  ON ue.eventID = e.name AND ue.userID = u.userName WHERE u.username = '$name' ORDER BY e.event_date, e.start_time";
+			  
 			  $result = mysqli_query($db, $query);
 			  
-			  while($row = mysqli_fetch_array($result)){
-				$content = $row['Bio'];				
-				echo("<h5>$content</h5>");
-			}			
-			?>
-			</td></tr>
-			<tr><td>
-			My Email:
-		    <?php
-			  $name = $_SESSION['username'];			 
-			  $query = "select email from users WHERE username = '$name'";
-			  $result = mysqli_query($db, $query);
-			  
-			  while($row = mysqli_fetch_array($result)){
-				$content = $row['email'];				
-				echo("<h5>$content</h5>");
-			}			
-			?>
-			</tr></td>
-			<tr><td>
-			
-			<?php
-			  echo("<h2>$name's Groups:</h2>");
-			  $name = $_SESSION['username'];			 
-			  $query = "SELECT u.userName, g.groupName FROM users u inner join groups 
-g INNER JOIN memberJunction m ON u.userName = m.userName 
-AND g.groupName = m.groupName WHERE u.username = '$name'";
-			  $result = mysqli_query($db, $query);
+			  if(mysqli_num_rows($result) > 0){
 			  echo '<table><h5>';
 			  while($row = mysqli_fetch_array($result)){
 				
-				$content = $row['groupName'];
-				echo("<tr><td><a href='groupProf.php?group=$content'>$content</a></td>");
-			}
-			echo "</h5></table>";
-			
+				 $content = $row['name'];
+			     echo("<tr><td><b>$content</b></a></td>");
+				 
+				 echo("<table>");
+				 $content = $row['description'];
+				 echo("<tr><td>Description: $content</a></td></tr>");
+				 
+				 $content = $row['event_date'];
+				 echo("<tr><td>Date: $content</a></td></tr>");
+				 
+				 $content = $row['start_time'];
+				 echo("<tr><td>Start: $content</a></td></tr>");
+				 
+				 $content = $row['end_time'];
+				 echo("<tr><td>End: $content</a></td></tr>");
+				 
+				 $content = $row['location'];
+				 echo("<tr><td>Location: $content</a></td></tr>");
+				 echo("</table><br>");
+			    }	
+			  }
+			  else{
+				echo("No events to display! <br><br>");
+			  }
 			?>
-			</td></tr>	
 			
-			</h4></td></tr>
-			
-			</table
+			</table>
 		</div>
 		</br>
-		<a href="editprofile.php">edit profile</a>
+		<br><form method="post" action="home.php">
+					<input type="submit" value="Back to Home" name="Back to groups" />
+				</form>
 	</body>
 </html>

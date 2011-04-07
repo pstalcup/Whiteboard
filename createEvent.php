@@ -16,24 +16,28 @@
 			<td class="tab4"><a href="home.php">home</a></td>
 			<td class="tab2"><a href="profile.php">profile</a></td>
 			<td class="tab3"><a href="calendar.php">calendar</a></td>
-			<td class="tab1">groups</td>
+			<td class="tab2"><a href="groups.php">groups</a></td>
 			<td class="login"><font color="#ffffff">welcome! | </font><a href="logout.php"> logout</a></td>			</tr></table>
 
 			<table cellspacing="0"><tr>
 			<td class="content">
 			
-<a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a>  | create a group | <a href="joingroup.php">join/unjoin a group</a><h2>Create a Group!</h2><h5>			
+<h2>Create an Event</h2><h5>			
 			
 			<?php
 				
-				echo('<form method="post" action="createGroup_submit.php">
+				echo('<form method="post" action="createEvent_submit.php">
 					<table>
-					<tr><td>Group Name:</td><td> <input type="text" name="groupName" size="50"></td></tr>
-					<tr><td>Brief Description (1 sentence):</td><td><textarea rows="2" cols="50" name="shortInfo"></textarea></td></tr>					
-					<tr><td>Full Description:</td><td><textarea rows="10" cols="50" name="groupDescription"></textarea></td></tr>
+					<tr><td>Event Name:</td><td> <input type="text" name="eventName" size="50"></td></tr>				
+					<tr><td>Description:</td><td><textarea rows="10" cols="50" name="description"></textarea></td></tr>
+					<tr><td>Date (YYYY-MM-DD):</td><td><input type="text" name="eventDate" size = "50"></td></tr>
+					<tr><td>Start Time (hh:mm:ss):</td><td><input type="text" name="startTime" size = "50"></td></tr>
+					<tr><td>End Time (hh:mm:ss):</td><td><input type="text" name="endTime" size = "50"></td></tr>
+					<tr><td>Location:</td><td> <input type="text" name="location" size="50"></td></tr>
+					<tr><td>Event Group:</td><td> <input type="text" name="groupName" size="50"></td></tr>
 					<tr><td><input type="submit" value="Submit" name="add group" /></td>
 					</table>
-				</form>');			
+					</form>');			
 				
 			?>
             </h5></td></tr>
