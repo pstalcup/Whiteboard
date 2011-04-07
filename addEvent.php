@@ -43,19 +43,19 @@
 								$event = $row['name'];
 								$eDate = $row['event_date'];
 								$startT = $row['start_time'];
-								$tempquery = "SELECT COUNT(eventID) FROM userevents e WHERE e.eventID = '$event' AND e.userID = '$name'";
+								$tempquery = "SELECT COUNT(eventID) c FROM userevents e WHERE e.eventID = '$event' AND e.userID = '$name'";
 								//echo($tempquery);
 								$tempresult = mysqli_query($db, $tempquery);
 								//print_r($tempresult);
 								$array = mysqli_fetch_array($tempresult);
-								$count = $array['COUNT(eventID)'];
+								$count = $array['c'];
 								$endT = $row['end_time'];
 								$location = $row['location'];
 								$grp = $row['group_id'];
 																
-								
+								$url = urlencode($event);
 								echo("<tr>");
-								echo("<td><input type='checkbox' name= $event value='1'></td>");
+								echo("<td><input type='checkbox' name= $url value='1'></td>");
 								echo("<td>" . $event . "</td>");
 								echo("<td>" . $eDate . "</td>");
 								echo("<td>" . $startT . "</td>");
@@ -82,21 +82,23 @@
 							$i = 0;
 							while($row = mysqli_fetch_array($result))
 							{
-								$test = $_GET[$row["name"]];
-								echo("<br>Name: $test");
-								if($_GET[$row["name"]] == "1")
+								//$test = $_GET[$row["name"]];
+								//echo("<br>Name: $test");
+								//echo($row['name']);
+								if($_GET[urlencode($row["name"])] == "1")
 								{
 									$i++;
 									$event = $row['name'];
 									$eDate = $row['event_date'];
 									$startT = $row['start_time'];
-									$tempquery = "SELECT COUNT(eventID) FROM userevent e WHERE e.eventID = '$event' AND e.userID = '$name'";
+									$tempquery = "SELECT COUNT(eventID) FROM userevents e WHERE e.eventID = '$event' AND e.userID = '$name'";
 									$tempresult = mysqli_query($db, $tempquery);
 									$array = mysqli_fetch_array($tempresult);
 									$count = $array['COUNT(eventID)'];
 									$endT = $row['end_time'];
 									$location = $row['location'];
 									$grp = $row['group_id'];
+									echo("Count: $count");
 									if($count == 0){									
 										$query2 = "INSERT INTO userevents VALUES ('$name', '$event')";
 										$join = "ADDED";

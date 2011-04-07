@@ -28,8 +28,7 @@
 			<tr><td><h2>Events</h2>
 			<?php
 			  $name = $_SESSION['username'];		  
-			  $query = "select e.* FROM users u INNER JOIN events e INNER JOIN userevents ue 
-			  ON ue.eventID = e.name AND ue.userID = u.userName WHERE u.username = '$name' ORDER BY e.event_date, e.start_time";
+			  $query = "select * from events";
 			  
 			  $result = mysqli_query($db, $query);
 			  
@@ -38,24 +37,26 @@
 			  while($row = mysqli_fetch_array($result)){
 				
 				 $content = $row['name'];
-			     echo("<tr><td><b>$content</b></a></td>");
+			     echo("<tr><td><b>$content</b></td>");
 				 
 				 echo("<table>");
 				 $content = $row['description'];
-				 echo("<tr><td>Description: $content</a></td></tr>");
+				 echo("<tr><td>Description: $content</td></tr>");
 				 
 				 $content = $row['event_date'];
-				 echo("<tr><td>Date: $content</a></td></tr>");
+				 echo("<tr><td>Date: $content</td></tr>");
 				 
 				 $content = $row['start_time'];
-				 echo("<tr><td>Start: $content</a></td></tr>");
+				 echo("<tr><td>Start: $content</td></tr>");
 				 
 				 $content = $row['end_time'];
-				 echo("<tr><td>End: $content</a></td></tr>");
+				 echo("<tr><td>End: $content</td></tr>");
 				 
 				 $content = $row['location'];
-				 echo("<tr><td>Location: $content</a></td></tr>");
-				 echo("</table><br>");
+				 echo("<tr><td>Location: $content</td></tr>");
+				 echo("<tr><td></td></tr>");
+				 echo("<tr><td></td></tr>");
+				 echo("<tr><td></td></tr>");
 			    }	
 			  }
 			  else{

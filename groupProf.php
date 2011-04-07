@@ -42,6 +42,19 @@ view groups | <a href="editgroup.php">edit groups</a> | <a href="creategroup.php
 				$content = $row['groupdescription'];				
 				echo("<h4>Description:	</h4><h5>$content</h5>");
 			}			 
+			
+			 $query = "select name from events WHERE group_id = '$grp' AND event_date>= curdate()";
+			 //echo($query);
+			 $result = mysqli_query($db, $query);
+			  
+			  while($row = mysqli_fetch_array($result)){
+				$content = $row['name'];				
+				echo("<h4>Next Event:	</h4><h5><a href='events.php'>$content</a></h5>");
+				
+			}	
+			
+			
+			
 			   $query = "select groupadmin from groups WHERE groupName = '$grp'";
 			   $result = mysqli_query($db, $query);
 			  

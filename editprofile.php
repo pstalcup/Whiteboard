@@ -51,9 +51,23 @@
 					>
 					
 					</td></tr>	
+					<tr><td>Enter path to new avatar</td><td> <input type="text" name="avatar" size="50" value=
+				    <?php
+					 $name = $_SESSION['username'];			 
+					 $query = "select avatar from users WHERE username = '$name'";
+					 $result = mysqli_query($db, $query);
+			  
+					while($row = mysqli_fetch_array($result)){
+						$content = $row['avatar'];				
+						echo("$content");
+					}			
+					?>
+					>
+					</td></tr>	
 					</textarea></td></tr>
 					
 					<tr><td>New Password</td><td> <input type="password" name="password" size="50">
+					
 					</td></tr>		
 					<tr><td></td><td><input type="Submit" value="Save Edits"></td></tr>
 					

@@ -22,7 +22,7 @@
 			<table cellspacing="0"><tr>
 			<td class="content">
 			
-<a href="groups.php">view groups</a> | <a href="editgroup.php">edit groups</a>  | create a group | <a href="joingroup.php">join/unjoin a group</a><h2>Create a Group!</h2><h5>			
+<a href="groups.php">view groups</a> | create a group | <a href="joingroup.php">join/unjoin a group</a><h2>Create a Group!</h2><h5>			
 			
 			<?php
 				

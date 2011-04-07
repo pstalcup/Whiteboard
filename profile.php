@@ -67,6 +67,7 @@
 				echo("<h5>$content</h5>");
 			}			
 			?>
+			
 			</tr></td>
 			<tr><td>
 			
