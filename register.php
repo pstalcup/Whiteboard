@@ -22,7 +22,7 @@
 			</table></td>
 			</table>
 			<?php
-			if(isset($_POST['username']) && isset($_POST['password']))
+			if(isset($_POST['username']) && isset($_POST['password']) && $_POST['password'] == $_POST['cpassword'])
 			{
 				$username = $_POST['username'];
 				$password = $_POST['password'];
@@ -65,8 +65,12 @@
 			echo('
 			<table cellspacing="0"><tr>
 			<td class="content"><h2>Register</h2><h5><form action="register.php" method="post"><table><tr><td>Username</td><td><input type="text" name="username"></td>
-			<tr><td>Password</td><td><input type="password" name="password"></td><tr><td>Email</td><td><input type="text" name="email"></td></h5></td></tr><tr><td><input type="submit"></td></table>
+			<tr><td>Password</td><td><input type="password" name="password"></td><tr><td>Confirm Password</td><td><input type ="password" name="cpassword"</td?<tr><td>Email</td><td><input type="text" name="email"></td></h5></td></tr><tr><td><input type="submit"></td></table>
 			');
+			if(isset($_POST['password']) && isset($_POST['cpassword']) && $_POST['password'] != $_POST['cpassword'])
+			{
+				echo '<font color="red">The passwords did not match</font>';
+			}
 			}
 			?>
 		</div>
